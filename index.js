@@ -1,11 +1,11 @@
 //output object prop and values to console
-import objOutput from './objOutput.js';
-//func cheking if there is prop in obj
-import checkProp from './checkProp.js';
+import objOutput from './2_objOutput.js';
+//func checking if there is prop in obj
+import checkProp from './1_checkProp.js';
 //function creating empty object with null __proto__
-import createOrphanObj from './createOrphanObj.js';
+import createOrphanObj from './3_createOrphanObj.js';
 //Function constructor
-import ElectroAppliance from './appliance.js';
+import ElectroAppliance from './4_appliance.js';
 //Class
 import ClassAppliance from './5_applianceClass.js';
 
@@ -18,9 +18,15 @@ const cityMns = {
 const person1 = Object.create(cityMns);
 person1.birthCity = 'Brest';
 
-objOutput(person1);
-console.log(checkProp('birthCity', person1));
-console.log(createOrphanObj());
+
+//Task 1. Checking property in object
+    console.log(checkProp('birthCity', person1));
+
+//Task 2. Print out all own properties from object
+    objOutput(person1);
+
+//Task 3. Creating object without __proto__
+    console.log(createOrphanObj());
 
 //Task 4. Function constructor
 
@@ -100,11 +106,11 @@ console.log(createOrphanObj());
     }
 
     let lampC = new Lamp('desk', '2700K');
-    console.log(lampC);
 
+    console.log(lampC);
     lampC.pressSwitch();
     lampC.dimmer(-5);
-
+    //Creating new Class with extending Parent Class
     class Blender extends ClassAppliance {
         constructor(maxSpeed) {
             super('blender', 1300)
@@ -126,8 +132,9 @@ console.log(createOrphanObj());
             else console.log('The speed is min');
         }
     }
-
+    //creating new object
     let blenderC = new Blender(6);
+
     console.log(blenderC);
     blenderC.speedUP();
     blenderC.pressSwitch();
